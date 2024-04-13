@@ -2,6 +2,7 @@ pipeline {
     agent any
         tools{
         gradle 'gradle'
+        git 'git'
     }
     stages{
         stage("Clone Code"){

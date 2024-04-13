@@ -7,4 +7,5 @@ Each branch contains a new "Step" of code. Please fork, then clone.
 2. Change 2
 3. Change 3
 4. Change 4
-5.Change 5
+5. Change 5
+6. Change 6
