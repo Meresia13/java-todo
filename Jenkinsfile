@@ -1,30 +1,28 @@
 pipeline {
     agent any
-        tools{
+    tools {
         gradle 'gradle'
         git 'git'
     }
-    stages{
-        stage("Clone Code"){
-            steps{
-                git branch: 'master' , url: 'https://github.com/Meresia13/java-todo.git'
+    stages {
+        stage("Clone Code") {
+            steps {
+                git branch: 'master', url: 'https://github.com/Meresia13/java-todo.git'
             }
         }
         
-        stage('Build Code'){
-            steps{
+        stage('Build Code') {
+            steps {
                 sh 'gradle build'
             }
         }
         
-        stage('Test Code'){
-            steps{
+        stage('Test Code') {
+            steps {
                 sh 'gradle test'
             }
         }
-    }
-}
-    stages {
+        
         stage('Install Dependencies') {
             steps {
                 script {
@@ -49,7 +47,7 @@ pipeline {
             steps {
                 script {
                     // Use the Render CLI to deploy the project
-                    sh 'render deploy --profile Melisa Opiyo'
+                    sh 'render deploy --profile "Melisa Opiyo"'
                 }
             }
         }
