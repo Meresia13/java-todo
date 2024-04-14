@@ -54,7 +54,7 @@ pipeline {
             steps {
                 script {
                     // Use the Render CLI to deploy the project
-                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu                }
+                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'                }
             }
         }
     }
