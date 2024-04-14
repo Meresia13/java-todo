@@ -5,6 +5,10 @@ pipeline {
         git 'git'
         nodejs 'nodejs'
     }
+    environment {
+        RENDER_EMAIL = credentials('melisaopiyo@gmail.com')
+        RENDER_API_TOKEN = credentials('rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu')
+    }
     stages {
         stage("Clone Code") {
             steps {
@@ -50,7 +54,7 @@ pipeline {
             steps {
                 script {
                     // Use the Render CLI to deploy the project
-                    sh '/home/meresia/bin/render deploy --profile "Melisa Opiyo"'                }
+                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu                }
             }
         }
     }
