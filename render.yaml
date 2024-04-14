@@ -1,0 +1,9 @@
+services:
+  - name: java-todo
+    type: web
+    env:
+      - key: JAVA_VERSION
+        value: 11
+    buildCommand: gradle build
+    startCommand: java -jar build/libs/java-todo.jar
+    healthCheckPath: /health
