@@ -50,8 +50,7 @@ pipeline {
             steps {
                 script {
                     // Use the Render CLI to deploy the project
-                    sh 'render deploy --profile "Melisa Opiyo"'
-                }
+                    sh '/home/meresia/bin/render deploy --profile "Melisa Opiyo"'                }
             }
         }
     }
