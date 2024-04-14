@@ -3,6 +3,7 @@ pipeline {
     tools {
         gradle 'gradle'
         git 'git'
+        nodejs 'nodejs'
     }
     stages {
         stage("Clone Code") {
