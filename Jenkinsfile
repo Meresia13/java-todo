@@ -29,6 +29,8 @@ pipeline {
                 script {
                     // Install Node.js dependencies using npm
                     sh 'npm install'
+                    // Install the express module
+                    sh 'npm install express --save'
                 }
             }
         }
@@ -37,7 +39,7 @@ pipeline {
             steps {
                 script {
                     // Start the Node.js server
-                    sh 'node server &'
+                    sh 'node server.js &'
                     // The '&' at the end runs the command in the background
                     // so that the Jenkins job doesn't wait for the server to finish
                 }
