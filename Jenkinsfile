@@ -6,9 +6,7 @@ pipeline {
         nodejs 'nodejs'
     }
     environment {
-        RENDER_EMAIL = credentials('melisaopiyo@gmail.com')
-        RENDER_API_TOKEN = credentials('rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu')
-    }
+        RENDER_CREDENTIALS_ID = 'be10a2f6-e031-498a-9195-c982e0d0956d'}
     stages {
         stage("Clone Code") {
             steps {
@@ -50,11 +48,12 @@ pipeline {
             }
         }
         
+    stages {
         stage('Deploy to Render') {
             steps {
-                script {
-                    // Use the Render CLI to deploy the project
-                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'                }
+                withCredentials([usernamePassword(credentialsId: 'RenderCredentials', usernameVariable: 'melisaopiyo@gmail.com', passwordVariable: 'rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu')]) {
+                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'
+                }
             }
         }
     }
