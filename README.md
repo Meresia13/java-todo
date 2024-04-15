@@ -28,3 +28,4 @@ Each branch contains a new "Step" of code. Please fork, then clone.
 23. Change 23
 24. Change 24
 25. Change 25
+26. Change 26
