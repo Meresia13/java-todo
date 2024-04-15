@@ -52,7 +52,7 @@ pipeline {
         stage('Deploy to Render') {
             steps {
                 withCredentials([usernamePassword(credentialsId: '7f88aad0-234b-4698-9077-f3048c1cc68e', usernameVariable: 'melisaopiyo@gmail.com', passwordVariable: 'rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu')]) {
-                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'
+                    sh '/home/meresia/bin/render-cli deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'
                 }
             }
         }
