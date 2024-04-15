@@ -48,12 +48,12 @@ pipeline {
                 }
             }
         }
-    } // Added this closing bracket
-    
-    stage('Deploy to Render') {
-        steps {
-            withCredentials([usernamePassword(credentialsId: 'RenderCredentials', usernameVariable: 'melisaopiyo@gmail.com', passwordVariable: 'rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu')]) {
-                sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'
+        
+        stage('Deploy to Render') {
+            steps {
+                withCredentials([usernamePassword(credentialsId: 'RenderCredentials', usernameVariable: 'melisaopiyo@gmail.com', passwordVariable: 'rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu')]) {
+                    sh 'render deploy --email melisaopiyo@gmail.com --token rnd_l5fGTsli0K1IvLrTsGUjR8sV6tMu'
+                }
             }
         }
     }
